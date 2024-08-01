@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Weather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="weatherContainer">
+            <input type="text" id="user-input" placeholder="Enter City Name" autofocus>
+            <!-- <button id="search-button">Search</button> -->
+            <div style="text-align: center; padding-top: 10px;"> <i class="fa-solid fa-location-dot"></i>&nbsp;<span id="weatherCity"></span>&nbsp;<span id="weatherCountry"></span></div>
+            <div class="weatherDetails">
+                
+                <div class="temprature"><div class="backBox"><span id="weatherTemp"></span></div></div>
+                <div class="feels">Feels: <span id="weatherFeels"></span></div> 
+                
+
+                <div class="weatherFeel arrangeDiv"><span>
+                        <div><span id="weatherMain"></span></div>
+                    </span></div>
+                <div class="sun arrangeDiv"><div><i class="fa-regular fa-sun"></i>&nbsp;<span id="weatherSunrise"></span></div><div><i class="fa-regular fa-moon"></i> <span id="weatherSunset"></span></div></div>
+                
+                <div class="arrangeDiv"><span><i class="fa-solid fa-fan"></i>&nbsp;<span id="weatherWind"></span></span></div>
+            </div>
+        </div>
+    </div>
+    <script src="myscript.js"></script>
+    <script src="https://kit.fontawesome.com/20165ec3b8.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
