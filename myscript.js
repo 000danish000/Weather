@@ -15,7 +15,6 @@ const getWeather = async () => {
     try {
         const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput.value}&limit=5&appid=aba30f613d104eed227c215feb6c904f&units=metric`);
         const data = await res.json();
-        console.log(data);
         const { clouds, main, sys, weather, wind, name } = data;
 
         let sunriseTime = new Date(sys.sunrise * 1000);
