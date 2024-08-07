@@ -1,5 +1,6 @@
 const userInput = document.getElementById("user-input");
 const searchBtn = document.getElementById("search-button");
+const weatherIcon = document.querySelector(".weatherIcon")
 
 const city = document.getElementById("weatherCity");
 const country = document.getElementById("weatherCountry");
@@ -12,12 +13,13 @@ const windSpeed = document.getElementById("weatherWind");
 
 let currentTime = document.querySelector('.showtime');
 
+
 setInterval(() => {
     const date = new Date();
-    let currentHour = (date.getHours()%12)<10 ? `0${date.getHours()%12}` : date.getHours()%12 ;
-    let currentMin = (date.getMinutes())<10 ? `0${date.getMinutes()}` : date.getMinutes() ;
-    let currentSeconds = (date.getSeconds())<10 ? `0${date.getSeconds()}` : date.getSeconds() ;
-    currentTime.innerHTML = `${currentHour}:${currentMin}:${currentSeconds}`;    
+    let currentHour = (date.getHours() % 12) < 10 ? `0${date.getHours() % 12}` : date.getHours() % 12;
+    let currentMin = (date.getMinutes()) < 10 ? `0${date.getMinutes()}` : date.getMinutes();
+    let currentSeconds = (date.getSeconds()) < 10 ? `0${date.getSeconds()}` : date.getSeconds();
+    currentTime.innerHTML = `${currentHour}:${currentMin}:${currentSeconds}`;
 }, 1000);
 
 const getWeather = async () => {
@@ -37,6 +39,8 @@ const getWeather = async () => {
         sunset.textContent = `↓${sunsetTime.getHours() % 12}:${sunsetTime.getMinutes()}:${sunsetTime.getSeconds()} PM`;
         weatherMain.textContent = weather[0].main;
         windSpeed.textContent = wind.speed;
+        weatherIcon.style.backgroundImage = `url("https://openweathermap.org/img/wn/${weather[0].icon}.png")`;
+
 
         userInput.value = "";
     }
