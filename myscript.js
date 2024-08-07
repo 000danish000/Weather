@@ -10,6 +10,15 @@ const sunrise = document.getElementById("weatherSunrise");
 const sunset = document.getElementById("weatherSunset");
 const windSpeed = document.getElementById("weatherWind");
 
+let currentTime = document.querySelector('.showtime');
+
+setInterval(() => {
+    const date = new Date();
+    let currentHour = (date.getHours()%12)<10 ? `0${date.getHours()%12}` : date.getHours()%12 ;
+    let currentMin = (date.getMinutes())<10 ? `0${date.getMinutes()}` : date.getMinutes() ;
+    let currentSeconds = (date.getSeconds())<10 ? `0${date.getSeconds()}` : date.getSeconds() ;
+    currentTime.innerHTML = `${currentHour}:${currentMin}:${currentSeconds}`;    
+}, 1000);
 
 const getWeather = async () => {
     try {
