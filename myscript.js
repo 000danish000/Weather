@@ -56,4 +56,5 @@ userInput.addEventListener("keydown", (e) => {
     }
 })
 
-window.onload(getWeather(userInput.value='surat'));
+window.onload(getWeather(userInput.value = 'surat'));
+
